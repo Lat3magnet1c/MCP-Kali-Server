@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-kali-server"
+version = "0.1.0"
+description = "MCP client and API server for Kali Linux tools"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "Flask>=3.0.0",
+    "requests>=2.31.0",
+    "mcp<2.0.0",
+]
+
+[project.scripts]
+kali-server-mcp = "server:main"
+kali-client-mcp = "client:main"
+
+[tool.setuptools]
+py-modules = ["server", "client"]
